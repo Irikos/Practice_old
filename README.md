@@ -1,0 +1,1 @@
+This is my practice repo for fairly small projects. I mainly use it to learn and break stuff; most of it gets deleted in the end, but, from time to time, some useful (or good-to-reference) code will be worthy.
