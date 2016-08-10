@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+
+<html>
+
+  <body>
+    <div id="scoreBoard">
+      score: <p id="score"></p>
+      lives: <p id="lives"></p>
+    </div>
+    <div id="player">
+
+    </div>
+  </body>
+</html>
+
+<style>
+  #score {
+  }
+  #lives {
+
+  }
+  #player {
+    position: absolute;
+    background:blue;
+    width: 40px;
+    height: 40px;
+    left: 0 px;
+    top: 0 px;
+    name: "player";
+  }
+  #scoreBoard {
+    position:absolute;
+    right: 0px;
+  }
+
+</style>
+
+<script>
+
+  var posX = 0; // left
+  var posY = 0; // top
+  var direction = 0; // 0 up, 3 right, 6 down, 9 left
+  var score = 0;
+  var lives = 0;
+  var numberOfEnemies = 0;
+  document.getElementById("lives").innerHtml = lives;
+
+  function initializeGame() {
+    lives = 5;
+    score = 0;
+    while (numberOfEnemies < 5) {
+      createSprite("enemy", 30, 30, "black", 0, Math.random() * (window.innerWidth - 30),
+      Math.random() * (window.innerHeight - 30));
+      numberOfEnemies++;
+    };
+  }
+
+  initializeGame();
+  //keyUp = 38
+  //keyDown = 40
+  //keyLeft 37
+  //keyRight = 39
+  //keySpace = 32
+  function resetElement(element, left, top) {
+    element.style.left = left;
+    element.style.top = top;
+  }
+
+  function resetPlayer() {
+    resetElement(document.getElementById("player"), 0, 0);
+    posX = 0;
+    posY = 0;
+  }
+  document.onkeydown = function(event) {
+    isTouching(document.getElementById("player"));
+    // console.log(event);
+    // if (lives > 0) {
+    //   if (isTouching(document.getElementById("player"))) {
+    //     resetElement(document.getElementById("player"), 0, 0);
+    //     lives--;
+    //     document.getElementById("lives").innerHtml = lives;
+    //   }
+    // }
+    // else {
+    //   alert("You have lost!");
+    //   }
+
+    var distance = 15;
+    if (event.keyCode === 38) {
+      if(posY >= 10) {
+        posY -= distance;
+        document.getElementById("player").style.top = posY + "px";
+        direction = 0;
+      }
+    }
+    if (event.keyCode === 40) {
+      if (posY < window.innerHeight - 50) {
+        posY += distance;
+        document.getElementById("player").style.top = posY + "px";
+        direction = 6;
+      }
+    }
+    if (event.keyCode === 37) {
+      if (posX >= 10) {
+        posX -= distance;
+        document.getElementById("player").style.left = posX + "px";
+        direction = 9;
+      }
+    }
+    if (event.keyCode === 39) {
+      if (posX < window.innerWidth - 50) {
+        posX += distance;
+        document.getElementById("player").style.left = posX + "px";
+        direction = 3;
+      }
+    }
+
+    if (event.keyCode == 32) {
+      var numberOfObjects = 0;
+      shoot(direction, 5, 5, "red", 4);
+    }
+  }
+
+  // function for extracting a numer from a string in style (with px).
+  // Used (especially) for postioning elements
+  function getNumber(str) {
+    var i = 0;
+    var retStr = "";
+    while (!isNaN(str[i])) {
+      retStr += str[i];
+      i++;
+    }
+    return parseInt(retStr);
+  }
+
+  function isTouching(sprite) {
+    var children = document.body.childNodes;
+    for (var enemy in children) {
+      if (children[enemy].name === 'enemy') {
+        if ((getNumber(children[enemy].style.left) - getNumber(sprite.style.left)) < 0 && (getNumber(children[enemy].style.left) - getNumber(sprite.style.left)) > -40)
+          if ((getNumber(sprite.style.top) - getNumber(children[enemy].style.top)) > 0 && (getNumber(sprite.style.top) - getNumber(children[enemy].style.top)) < 40) {
+            if (sprite === document.getElementById("player")) {
+              lives--;
+              document.getElementById("lives").innerHtml = lives;
+              resetPlayer();
+              return true;
+          }
+          else
+            if (sprite.name === "bullet") {
+              score++;
+              document.getElementById("score").innerHtml = lives;
+              numberOfEnemies--;
+              console.log(score);
+              return children[enemy];
+            }
+        }
+      }
+    }
+    return false;
+  }
+
+  function createSprite(name, width, height, color, speed, coordX, coordY) {
+    var sprite = document.createElement("DIV");
+    sprite.name = name;
+    sprite.style.height = height + "px";
+    sprite.style.width = width + "px";
+    sprite.style.top = coordY + "px";
+    sprite.style.left = coordX + "px";
+    sprite.style.background = color;
+    sprite.style.position = "absolute";
+    document.body.appendChild(sprite);
+  }
+
+  // direction is in clockwise notation
+  function shoot(direction, width, height, color, speed) {
+    var bullet = document.createElement("DIV");
+    bullet.name = "bullet";
+    bullet.style.height = width + "px";
+    bullet.style.width = height + "px";
+    bullet.style.background = color;
+    bullet.style.position = "absolute";
+    document.body.appendChild(bullet);
+    var touchedElement;
+    if (direction === 0) {
+      var bulletPosX = posX + 18;
+      var bulletPosY = posY - 1;
+      var id = setInterval(frame, 5);
+      function frame() {
+        if (bulletPosY < 6) {
+          clearInterval(id);
+          document.body.removeChild(bullet);
+        }
+        else {
+          if (touchedElement = isTouching(bullet)) {
+            clearInterval(id);
+            document.body.removeChild(bullet);
+            document.body.removeChild(touchedElement);
+          }
+          bulletPosY -= speed;
+          bullet.style.top = bulletPosY + "px";
+        }
+      }
+    }
+    if (direction === 3) {
+      var bulletPosX = posX + 41;
+      var bulletPosY = posY + 18;
+      var id = setInterval(frame, 5);
+      function frame() {
+        if (bulletPosX > window.innerWidth - 6) {
+            clearInterval(id);
+            document.body.removeChild(bullet);
+        }
+        else {
+          if (touchedElement = isTouching(bullet)) {
+            clearInterval(id);
+            document.body.removeChild(bullet);
+            document.body.removeChild(touchedElement);
+          }
+          bulletPosX += speed;
+          bullet.style.left = bulletPosX + "px";
+        }
+      }
+    }
+    if (direction === 6) {
+      var bulletPosX = posX + 18;
+      var bulletPosY = posY + 41;
+      var id = setInterval(frame, 5);
+      function frame() {
+        if (bulletPosY >= window.innerHeight - 6) {
+            clearInterval(id);
+            document.body.removeChild(bullet);
+        }
+        else {
+          if (touchedElement = isTouching(bullet)) {
+            clearInterval(id);
+            document.body.removeChild(bullet);
+            document.body.removeChild(touchedElement);
+          }
+          bulletPosY += speed;
+          bullet.style.top = bulletPosY + "px";
+        }
+      }
+    }
+    if (direction === 9) {
+      var bulletPosX = posX - 1;
+      var bulletPosY = posY + 18;
+      var id = setInterval(frame, 5);
+      function frame() {
+        if (bulletPosX < 6) {
+            clearInterval(id);
+            document.body.removeChild(bullet);
+        }
+        else {
+          if (touchedElement = isTouching(bullet)) {
+            clearInterval(id);
+            document.body.removeChild(bullet);
+            document.body.removeChild(touchedElement);
+          }
+          bulletPosX -= speed;
+          bullet.style.left = bulletPosX + "px";
+        }
+      }
+    }
+    bullet.style.left = bulletPosX + "px";
+    bullet.style.top = bulletPosY + "px";
+  }
+</script>
