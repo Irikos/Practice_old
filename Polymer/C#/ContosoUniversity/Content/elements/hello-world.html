@@ -1,0 +1,29 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="/Content/elements/hello-world2.html">
+
+<dom-module id="hello-world">
+  <template>
+  
+      <hello-world2 name="{{val}}"></hello-world2>
+      <hello-world2 name="{{val}}"></hello-world2>
+      <input value="{{val}}"/>
+      
+
+  
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'hello-world',
+    properties: {
+        val: {
+            type: String,
+            value: "ionut"
+        }
+       
+
+    }
+
+  });
+</script>

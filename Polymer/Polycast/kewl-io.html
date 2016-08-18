@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`kewl-io`
+The coolest element around.
+
+@demo demo/index.html 
+-->
+
+<dom-module id="kewl-io">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'kewl-io',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'kewl-io',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

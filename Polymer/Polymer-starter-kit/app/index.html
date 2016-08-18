@@ -91,6 +91,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
           </a>
+
+          <a data-route="books" href="{{baseUrl}}books">
+            <iron-icon icon="book"></iron-icon>
+            <span> Read all the books! </span>
+          </a>
+
+          <a data-route="star" href="{{baseUrl}}star">
+            <iron-icon icon="star"></iron-icon>
+            <span>Testing the star</span>
+          </a>
         </paper-menu>
       </paper-scroll-header-panel>
 
@@ -176,6 +186,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <paper-material elevation="1">
                 <h1 class="page-title" tabindex="-1">Contact</h1>
                 <p>This is the contact section</p>
+              </paper-material>
+            </section>
+
+            <section data-route="star" tabindex="1">
+              <paper-material elevation="5">
+                <h1 class="page-title" tabindex="-1"> Le star! <iron-icon icon="star" pressed=false></iron-icon> </h1>
+                <p>This page is dedicated to the star!</p>
+              </paper-material>
+            </section>
+
+            <section data-route="books">
+              <paper-material elevation="1">
+                <p>Hello, world! Read some books!</p>
               </paper-material>
             </section>
           </iron-pages>

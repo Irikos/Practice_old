@@ -1,0 +1,7 @@
+{
+  "name": "Petshop",
+  "short_name": "Petshop",
+  "description": "Template for the pet shop app",
+  "start_url": "/",
+  "display": "standalone"
+}

@@ -1,0 +1,25 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+
+<dom-module id="my-element">
+  <template>
+    <style>
+
+    </style>
+    <div>
+
+    </div>
+  </template>
+
+  <script>
+    Polymer ({
+      is: "my-element",
+      // callback when created
+      created: function() {
+        this.textContent = "My element was just created";
+      }
+
+    });
+
+  </script>
+</dom-module>

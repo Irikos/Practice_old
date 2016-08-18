@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../my-theme.html" />
+<link rel="import" href="../shop-item/shop-item.html">
+
+<dom-module id="main-lement">
+  <template>
+    <style>
+      :host {
+        display: block;
+      /*-shop-item-test-color: green;*/
+
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+    <div>
+      <shop-item name="Le cat"></shop-item>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'main-lement',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'main-lement',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

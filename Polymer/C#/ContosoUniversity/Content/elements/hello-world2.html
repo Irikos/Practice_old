@@ -1,0 +1,47 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="hello-world2">
+    <template>
+        <iron-ajax auto
+                   url="/"
+                   on-response="{{greet}}"
+                   handleAs="json">
+        </iron-ajax>
+
+
+        <input value="{{name::input}}" />
+        <div>{{greet}}</div>
+    </template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'hello-world2',
+    properties: {
+        name: {
+            type: String,
+            value: "ionut",
+            notify: true
+        }
+    },
+    ready: function () {
+       
+    }
+
+  });
+  (function (document) {
+      'use strict';
+
+      var app = document.querySelector('#app');
+
+      window.addEventListener('WebComponentsReady', function () {
+          var ironAjax = document.querySelector('iron-ajax');
+          ironAjax.addEventListener('response', function () {
+            
+          });
+          ironAjax.generateRequest();
+      });
+
+  })(document);
+</script>

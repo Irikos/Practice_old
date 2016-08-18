@@ -1,0 +1,75 @@
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+<!--
+An element providing a solution pulling github issues.
+
+
+@demo demo/index.html
+@hero hero.svg
+-->
+
+<dom-module id="gh-issues">
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+      }
+
+    </style>
+    <iron-ajax
+        auto
+        url='{{url}}'
+        handle-as="json"
+        params="{{options}}"
+        last-response="{{response}}"></iron-ajax>
+
+        <template is="dom-repeat" items={{response}}>
+            <div>
+              <a href="{{item.html_url}}">{{item.title}}</a>{{url}}
+            </div>
+        </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'gh-issues',
+
+      properties: {
+        owner: {
+          value: 'polymer',
+          notify: true
+        },
+        repo: {
+          value: 'polymer',
+          notify: true
+        },
+        state: {
+          value: "open",
+          notify: true
+        },
+        page: {
+          value: 1,
+          notify: true
+        },
+        url: {
+          computed: 'computeUrl(owner, repo)'
+        },
+        options: {
+          computed: 'computeOptions(state, page)'
+        }
+      },
+
+
+      computeUrl: function(owner, repo) {
+        return ['https://api.github.com/repos', owner, repo, 'issues'].join('/');
+      },
+
+      computeOptions: function(state, page) {
+        return {state: state, page: page};
+      }
+    });
+  </script>
+</dom-module>
