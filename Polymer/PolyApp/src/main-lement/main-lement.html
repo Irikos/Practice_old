@@ -7,13 +7,16 @@
     <style>
       :host {
         display: block;
-      /*-shop-item-test-color: green;*/
 
+      /*-shop-item-test-color: green;*/
+      }
+      :host shop-item {
+        @apply(--shop-item-header-theme);
       }
     </style>
     <h2>Hello [[prop1]]</h2>
     <div>
-      <shop-item name="Le cat"></shop-item>
+      <shop-item name="Menu"></shop-item>
     </div>
   </template>
 
