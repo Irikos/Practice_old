@@ -5,15 +5,46 @@
     <title>Petshop</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Comptaible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="manifest" href="/manifest.json">
-    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="my-theme.html" />
+
+    <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="custom-icons.html">
+
     <link rel="import" href="/src/main-lement/main-lement.html">
     <link rel="import" href="/src/shop-item/shop-item.html">
+    <link rel="import" href="/src/poly-square/poly-square.html">
 
+    <style>
+      iron-icon circle {
+        fill: #0b50bf;
+      }
+      iron-icon circle:first-child {
+        fill: #66bbff;
+      }
+      iron-icon circle:last-child {
+        fill: #0083ff;
+      }
+      .icon-play {
+        color: lightgreen;
+      }
+    </style>
   </head>
   <body>
+    <!-- custom icons (polycasts#22)-->
+    <!--
+    <iron-icon icon="custom-icons:fancy-circles"></iron-icon>
+    <iron-icon class="icon-play" icon="custom-icons:play-arrow"></iron-icon>
+    <paper-icon-button icon="custom-icons:android"></paper-icon-button> -->
+
+    <!-- behaviors -->
+    <!--
     <main-lement></main-lement>
-    <shop-item id="tst" name="Le index cat"></shop-item>
+    <shop-item id="tst" name="Index category"></shop-item>
+    <poly-square></poly-square> -->
   </body>
 </html>

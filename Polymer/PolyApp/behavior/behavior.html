@@ -1,0 +1,51 @@
+<script>
+  var MyBehaviors = MyBehaviors || {}
+
+  MyBehaviors.PressedBehavior = {
+    properties: {
+      pressed: {
+        type: Boolean,
+        default: false,
+        readOnly: true
+      }
+    },
+
+    listeners: {
+      mousedown: '_addPressed',
+      mouseup: '_removePressed',
+      click: '_toggleMark'
+    },
+    created: function() {
+      console.log('an object with pressed behavior is alive!');
+    },
+    _addPressed: function() {
+      this.classList.add('pressed');
+      this._onPressStart();
+    },
+
+    _removePressed: function() {
+      this.classList.remove('pressed');
+      this._onPressEnd();
+    },
+
+    _toggleMark: function() {
+        this.classList.toggle('mark');
+        this._onToggleMark();
+    },
+
+    _onPressStart: function() {
+      // abstract
+    },
+
+    _onPressEnd: function() {
+      // abstract
+    },
+
+    _onToggleMark() {
+      // abstract
+    }
+
+
+  }
+
+</script>

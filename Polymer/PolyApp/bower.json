@@ -3,7 +3,9 @@
   "description": "Template for the pet shop app",
   "main": "index.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.4.0",
+    "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^1.0.9",
+    "iron-icon": "PolymerElements/iron-icon#^1.0.10"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
