@@ -15,6 +15,8 @@ int main(int argc, char** argv)
     buildArray(array, size, argv);
 
     selectionSort(array, size);
+
+    free(array);
   }
 
   return 0;
@@ -28,7 +30,7 @@ void selectionSort(int* arr, int size)
   for (int k = 0; k < size; k++)
     printf("%d ", arr[k]);
   printf("\n");
-  
+
   for (int i = 0; i < size; i++)
   {
     minPosition = i;

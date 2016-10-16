@@ -15,6 +15,8 @@ int main(int argc, char** argv)
     buildArray(array, size, argv);
 
     bubbleSort(array, size);
+
+    free(array);
   }
 
   return 0;
@@ -46,7 +48,7 @@ void bubbleSort(int* arr, int size)
     for (int i = 0; i < size; i++)
       printf("%d ", arr[i]);
     printf("\n");
-    
+
   }while (swapCounter != 0);
 }
 

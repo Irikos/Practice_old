@@ -15,6 +15,8 @@ int main(int argc, char** argv)
     buildArray(array, size, argv);
 
     insertionSort(array, size);
+    
+    free(array);
   }
 
   return 0;
