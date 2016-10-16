@@ -15,7 +15,7 @@ int main(int argc, char** argv)
     buildArray(array, size, argv);
 
     insertionSort(array, size);
-    
+
     free(array);
   }
 
@@ -29,11 +29,11 @@ void insertionSort(int* arr, int size)
     printf("%d ", arr[k]);
   printf("\n");
 
-  for (int i = 0; i < size - 1; i++)
+  for (int i = 1; i < size; i++)
   {
-    int j = i + 1;
-    int currentNumber = arr[j];
-    while(j > 0 && currentNumber < arr[j - 1])
+    int j = i;
+    int currentNumber = arr[i];
+    while(j > 0 && arr[j - 1] > currentNumber)
     {
       arr[j] = arr[j - 1];
       j--;
