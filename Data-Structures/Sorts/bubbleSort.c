@@ -23,12 +23,14 @@ int main(int argc, char** argv)
 
 void bubbleSort(int* arr, int size)
 {
+  for (int i = 0; i < size; i++)
+    printf("%d ", arr[i]);
+  printf("\n");
+
   int swapCounter = -1;
   do
   {
-    for (int i = 0; i < size; i++)
-      printf("%d ", arr[i]);
-    printf("\n");
+
     swapCounter = 0;
     for (int i = 0; i < size - 1; i++)
     {
@@ -40,6 +42,11 @@ void bubbleSort(int* arr, int size)
         swapCounter++;
       }
     }
+
+    for (int i = 0; i < size; i++)
+      printf("%d ", arr[i]);
+    printf("\n");
+    
   }while (swapCounter != 0);
 }
 

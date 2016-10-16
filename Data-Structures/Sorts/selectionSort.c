@@ -25,12 +25,12 @@ void selectionSort(int* arr, int size)
 {
   int minPosition = 0;
 
+  for (int k = 0; k < size; k++)
+    printf("%d ", arr[k]);
+  printf("\n");
+  
   for (int i = 0; i < size; i++)
   {
-    for (int k = 0; k < size; k++)
-      printf("%d ", arr[k]);
-
-    printf("\n");
     minPosition = i;
     for (int j = i; j < size; j++)
     {
@@ -42,6 +42,10 @@ void selectionSort(int* arr, int size)
     int aux = arr[i];
     arr[i] = arr[minPosition];
     arr[minPosition] = aux;
+
+    for (int k = 0; k < size; k++)
+      printf("%d ", arr[k]);
+    printf("\n");
   }
 }
 

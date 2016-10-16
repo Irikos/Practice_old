@@ -23,25 +23,24 @@ int main(int argc, char** argv)
 
 void insertionSort(int* arr, int size)
 {
+  for (int k = 0; k < size; k++)
+    printf("%d ", arr[k]);
+  printf("\n");
+
   for (int i = 0; i < size - 1; i++)
   {
+    int j = i + 1;
+    int currentNumber = arr[j];
+    while(j > 0 && currentNumber < arr[j - 1])
+    {
+      arr[j] = arr[j - 1];
+      j--;
+    }
+    arr[j] = currentNumber;
+
     for (int k = 0; k < size; k++)
       printf("%d ", arr[k]);
     printf("\n");
-
-    for (int j = i + 1; j > sorted; j--)
-    {
-      int aux = arr[j];
-      if (aux < arr[j - 1])
-      {
-        arr[j] = arr[j - 1];
-      }
-      else
-      {
-        arr[j] = aux;
-        break;
-      }
-    }
   }
 }
 
