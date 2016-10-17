@@ -31,19 +31,22 @@ void selectionSort(int* arr, int size)
     printf("%d ", arr[k]);
   printf("\n");
 
-  for (int i = 0; i < size; i++)
+  for (int i = 0; i < size - 1; i++)
   {
     minPosition = i;
-    for (int j = i; j < size; j++)
+    for (int j = i + 1; j < size; j++)
     {
       if (arr[j] < arr[minPosition])
       {
         minPosition = j;
       }
     }
-    int aux = arr[i];
-    arr[i] = arr[minPosition];
-    arr[minPosition] = aux;
+    if (arr[minPosition] != arr[i])
+    {
+      int aux = arr[i];
+      arr[i] = arr[minPosition];
+      arr[minPosition] = aux;
+    }
 
     for (int k = 0; k < size; k++)
       printf("%d ", arr[k]);
