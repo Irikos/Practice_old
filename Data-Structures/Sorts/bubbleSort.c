@@ -32,7 +32,6 @@ void bubbleSort(int* arr, int size)
   int swapCounter = -1;
   do
   {
-
     swapCounter = 0;
     for (int i = 0; i < size - 1; i++)
     {
