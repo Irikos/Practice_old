@@ -1,4 +1,4 @@
-The data structures found here are written when fully understood, with no copy paste, no peeking on the web and written with the purpose to compile on the first try. I try to write them as readable as possible. Only typo-like errors on compilation are accepted, though undesired.
+Playing around with algorithms and data structures
 
 
 ====

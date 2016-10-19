@@ -1,0 +1,8 @@
+ProjectEuler/
+
+
+### Java ###
+*.class
+
+### C ###
+*.out
