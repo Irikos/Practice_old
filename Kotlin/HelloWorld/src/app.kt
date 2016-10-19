@@ -25,6 +25,11 @@ fun main(args: Array<String>) {
     println(isString(4))
 
     cases(1)
+    val gf = GeometricForm(2,3)
+    val (a, b) = gf
+    println(a)
+    println(b)
+
 }
 
 fun sum(a: Int, b: Int) : Int {
@@ -97,4 +102,11 @@ fun cases(obj: Any) {
                 a++
         }
     }
+}
+
+open class GeometricForm(var length : Int = 0, var height : Int = 0) {
+
+    fun copy(length: Int = this.length, height: Int = this.height) = GeometricForm(length, height)
+
+
 }
