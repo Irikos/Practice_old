@@ -3,11 +3,11 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-    classpath("org.springframework.book:spring-boot-gradle-plugin:1.4.1.RELEASE")
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
   }
 }
 
-apply pugin: 'java'
+apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
@@ -23,3 +23,12 @@ repositories {
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web")
+  testCompile('org.springframework.boot:spring-boot-starter-test')
+  compile("org.springframework.boot:spring-boot-starter")
+  compile("org.springframework:spring-web")
+  compile("com.fasterxml.jackson.core:jackson-databind")
+  testCompile("junit:junit")
+}
