@@ -2,6 +2,7 @@ package hello;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
  */
 @RestController
 public class StudentList {
-    private static List<Student> students;
+    private static List<Student> students = new ArrayList<>();
 
 
 

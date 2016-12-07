@@ -4,11 +4,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
+
 /**
  * Created by Andrei on 31-Oct-16.
  */
 @RestController
 public class StudentController {
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("postconstruct");
+    }
 
     StudentController() {
         StudentList.addStudent(19, "Vasile", "Cupcea", "vasile.cupcea@gmail.com");

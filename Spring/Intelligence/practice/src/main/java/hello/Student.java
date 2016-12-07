@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * Created by Andrei on 31-Oct-16.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Student {
+class Student {
     private static long counter = 0;
     private long id;
     private String firstName, lastName, email;
