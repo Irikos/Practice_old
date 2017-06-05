@@ -1,0 +1,5 @@
+Analiza II:
+Va trimit atasate Notele de curs care contin si exercitii rezolvate/propuse. 
+Voi da cu siguranta un exercitiu cu extreme locale, integrale duble, triple si curbilinii (1 sau 2 exercitii din fiecare). 
+Exercitiile vor fi asemanatoare cu cele din notele de curs. 
+In afara de exercitii sa stiti definitiile si demonstratiile din notele de curs.
