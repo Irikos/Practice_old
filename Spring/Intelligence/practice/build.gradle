@@ -1,12 +1,14 @@
 buildscript {
+    ext.kotlin_version = '1.0.4'
     repositories {
         mavenCentral()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
-
+apply plugin: 'kotlin'
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -15,6 +17,8 @@ apply plugin: 'spring-boot'
 jar {
     baseName = 'practice'
     version =  '0.1.0'
+
+    baseName = 'gs-relational-data-access'
 }
 
 repositories {
@@ -29,5 +33,26 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter")
     compile("org.springframework:spring-jdbc")
     compile("com.h2database:h2")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("com.fasterxml.jackson.core:jackson-databind")
     testCompile("junit:junit")
+
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-devtools")
+    compile("org.springframework.boot:spring-boot-configuration-processor")
+
+    compile('org.springframework.batch:spring-batch-core')
+    compile('org.springframework.batch:spring-batch-excel:0.5.0-SNAPSHOT')
+
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    compile(group: 'org.apache.poi', name: 'poi', version: '3.9')
+
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.0.1'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.0.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+
+}
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
 }

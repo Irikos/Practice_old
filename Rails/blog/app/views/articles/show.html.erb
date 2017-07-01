@@ -1,0 +1,22 @@
+<h1> Show article(s) </h1>
+
+<div>
+  <div>
+    <p> <strong> Id: </strong> <%= @article.id %> </p>
+    <p> <strong> Title: </strong> <%= @article.title %> </p>
+    <p> <strong> Content: </strong> <%= @article.text %> </p>
+  </div>
+  <div>
+    <h2> Comments: </h2>
+    <%= render @article.comments %>
+
+  </div>
+
+  <h2> Add a comment: </h2>
+  <%= render 'comments/form' %>
+
+
+
+  <%= link_to "Edit", edit_article_path(@article) %>
+  <%= link_to "View articles", articles_path %>
+</div>

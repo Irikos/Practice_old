@@ -1,8 +1,11 @@
 package hello;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
- * Created by Andrei on 28-Oct-16.
+ * Created by Andrei on 03-Nov-16.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Customer {
     private long id;
     private String firstName, lastName;
@@ -12,17 +15,8 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-    public long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
-        return this.firstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -30,15 +24,14 @@ public class Customer {
     }
 
     public String getLastName() {
-        return this.lastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    @Override
     public String toString() {
-        return "id: " + id + ", firstName: " + firstName + ", lastName: " + lastName;
+        return String.format("Customer[id = %d, firstName = '%s', lastString = '%s']", id, firstName, lastName);
     }
 }
