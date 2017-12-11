@@ -1,0 +1,10 @@
+C:\Users\Irikos\Documents\Programming\Practice\dotNetCore\hwapp\bin\Debug\netcoreapp2.0\hwapp.deps.json
+C:\Users\Irikos\Documents\Programming\Practice\dotNetCore\hwapp\bin\Debug\netcoreapp2.0\hwapp.runtimeconfig.json
+C:\Users\Irikos\Documents\Programming\Practice\dotNetCore\hwapp\bin\Debug\netcoreapp2.0\hwapp.runtimeconfig.dev.json
+C:\Users\Irikos\Documents\Programming\Practice\dotNetCore\hwapp\bin\Debug\netcoreapp2.0\hwapp.dll
+C:\Users\Irikos\Documents\Programming\Practice\dotNetCore\hwapp\bin\Debug\netcoreapp2.0\hwapp.pdb
+C:\Users\Irikos\Documents\Programming\Practice\dotNetCore\hwapp\obj\Debug\netcoreapp2.0\hwapp.csproj.CoreCompileInputs.cache
+C:\Users\Irikos\Documents\Programming\Practice\dotNetCore\hwapp\obj\Debug\netcoreapp2.0\hwapp.AssemblyInfoInputs.cache
+C:\Users\Irikos\Documents\Programming\Practice\dotNetCore\hwapp\obj\Debug\netcoreapp2.0\hwapp.AssemblyInfo.cs
+C:\Users\Irikos\Documents\Programming\Practice\dotNetCore\hwapp\obj\Debug\netcoreapp2.0\hwapp.dll
+C:\Users\Irikos\Documents\Programming\Practice\dotNetCore\hwapp\obj\Debug\netcoreapp2.0\hwapp.pdb
