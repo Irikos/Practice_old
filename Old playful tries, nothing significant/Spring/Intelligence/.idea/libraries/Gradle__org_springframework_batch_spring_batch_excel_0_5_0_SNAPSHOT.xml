@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.batch:spring-batch-excel:0.5.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/batch/spring-batch-excel/0.5.0-SNAPSHOT/spring-batch-excel-0.5.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/batch/spring-batch-excel/0.5.0-SNAPSHOT/spring-batch-excel-0.5.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
