@@ -3,6 +3,10 @@
 
 ### SVM vs KNN
 Data source: https://www.kaggle.com/loveall/cervical-cancer-risk-classification
+https://www.kaggle.com/randyrose2017/for-beginners-using-keras-to-build-models
+https://www.kaggle.com/andrewmvd/identifying-key-cancer-predictors-with-boruta
+
+https://www.kaggle.com/plarmuseau/ten-100-correct-models
 
 ### Data description
 data.info()
@@ -11,7 +15,7 @@ Data columns (total 36 columns): **?** means unknown
 | **Header** | **Type** | **Meaning** | 
 | -------------- | -------------- | --------------|
 | **Age** |  int64 | Age of the patient |
-| **Number of sexual partners** | float64 | With which the patient had intercourse.|
+| **Number of sexual partners** | float64 | Defined as intercourse.|
 | **First sexual intercourse** | float64 | Age when it happened. |
 | **Num of pregnancies** | float64 | Total number of pregnancies |
 | **Smokes** | float64 | 0 or 1, smokes or not |
