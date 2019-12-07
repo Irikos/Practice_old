@@ -12,6 +12,7 @@ https://www.kaggle.com/plarmuseau/ten-100-correct-models
 data.info()
 
 Data columns (total 36 columns): **?** means unknown
+
 | **Header** | **Type** | **Meaning** | 
 | -------------- | -------------- | --------------|
 | **Age** |  int64 | Age of the patient |
