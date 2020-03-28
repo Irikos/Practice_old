@@ -1,7 +1,7 @@
 # Practice
 
 1. Test list
-  1. subitem
+  1.* subitem
   1. asd
   1. subitem 1.2
 2. Test list 2
