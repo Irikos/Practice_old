@@ -6,3 +6,6 @@ ProjectEuler/
 
 ### C ###
 *.out
+
+
+MS/NLP/GoogleNews-vectors-negative300.bin
