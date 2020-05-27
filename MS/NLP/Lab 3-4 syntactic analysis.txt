@@ -1,0 +1,32 @@
+(ROOT
+  (S
+    (S
+      (NP (PRP We))
+      (VP (VBP have)
+        (S
+          (VP (TO to)
+            (VP (VB go)
+              (PP (TO to)
+                (NP (DT the) (NNS stars)))
+              (NP-TMP (CD one) (NN day)))))))
+    (, ,)
+    (NP (PRP it))
+    (VP (VBZ 's)
+      (NP (DT the) (JJ only) (NN way)))
+    (. !)))
+
+nsubj(have-2, We-1)
+nsubj:xsubj(go-4, We-1)
+ccomp(way-15, have-2)
+mark(go-4, to-3)
+xcomp(have-2, go-4)
+case(stars-7, to-5)
+det(stars-7, the-6)
+nmod:to(go-4, stars-7)
+nummod(day-9, one-8)
+nmod:tmod(go-4, day-9)
+nsubj(way-15, it-11)
+cop(way-15, 's-12)
+det(way-15, the-13)
+amod(way-15, only-14)
+root(ROOT-0, way-15)
