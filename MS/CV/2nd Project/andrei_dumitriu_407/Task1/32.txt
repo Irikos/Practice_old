@@ -1,4 +1,4 @@
-15
+14
 1 white
 1 black
 1 pink
@@ -6,4 +6,4 @@
 1 green
 1 brown
 1 yellow
-8 red
+7 red
